@@ -2,11 +2,14 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteIncome, addIncome } from "../../redux/action/incomeSlice";
 import "../../style/tableStyle.css";
+import { useNavigate } from "react-router-dom";
+
 
 const IncomeList = () => {
   const incomes = useSelector((state) => state.incomes.data);
   const dispatch = useDispatch();
 
+  const history = useNavigate()
   const handleDelete = (id) => {
     dispatch(deleteIncome({id}));
   };
@@ -17,6 +20,7 @@ const IncomeList = () => {
     localStorage.setItem("category",category)
     localStorage.setItem("amount",amount)
     localStorage.setItem("date", date)
+    history('/update/income') 
   }
 
   return (

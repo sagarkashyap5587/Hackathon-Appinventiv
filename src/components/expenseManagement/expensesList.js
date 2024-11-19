@@ -2,21 +2,26 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteExpense, addExpense } from "../../redux/action/expenseSlice";
 import "../../style/tableStyle.css";
+import { useNavigate } from "react-router-dom";
 
 const ExpenseList = () => {
   const expenses = useSelector((state) => state.expenses.data);
   const dispatch = useDispatch();
+  const history = useNavigate()
 
   const handleDelete = (id) => {
     dispatch(deleteExpense({id}))
   }
 
+
+
   const handleEdit = (id, category, amount, date) => {
-    localStorage.setItem("id",id)
-    localStorage.setItem("category",category)
-    localStorage.setItem("amount",amount)
-    localStorage.setItem("date", date)
-  }
+    localStorage.setItem("id", id);
+    localStorage.setItem("category", category);
+    localStorage.setItem("amount", amount);
+    localStorage.setItem("date", date);
+    history('/update/expenses')
+  };
   return (
 
     <>
