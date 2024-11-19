@@ -5,7 +5,7 @@ import useInput from "../chart/userInput";
 import Chart from "../chart";
 import "../../style/expenses.css"
 
-const ExpenseForm = () => {
+const ExpenseFormUpdate = () => {
   const dispatch = useDispatch();
   const [category, bindCategory, resetCategory] = useInput("");
   const [amount, bindAmount, resetAmount] = useInput(0);
@@ -23,7 +23,6 @@ const ExpenseForm = () => {
   return (
     <>
     <div className="formbackground">
-      <center><h1>UPDATE</h1></center>
     <form onSubmit={handleSubmit} className="form-change">
         <div className="form-field">
         <label htmlFor='category'>Category</label>
@@ -48,10 +47,4 @@ const ExpenseForm = () => {
 
 
 
-
-
-
-
-
-
-export default ExpenseForm;
+export default ExpenseFormUpdate;

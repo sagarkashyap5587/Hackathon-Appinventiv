@@ -4,6 +4,8 @@ import ExpenseList from "../components/expenseManagement/expensesList";
 import IncomeForm from "../components/incomeManagement";
 import IncomeList from "../components/incomeManagement/incomeList";
 import Dashboard from "../components/Dashboard";
+import IncomeFormUpdate from "../components/incomeManagement/update";
+import ExpenseFormUpdate from "../components/expenseManagement/update";
 
 const PageRoutes= [
     {
@@ -28,6 +30,18 @@ const PageRoutes= [
         name :"EXPENSE LIST",
         Components : ExpenseList,
         path: path.EXPENSE_LIST,
+        isPrivate: false
+    },
+    {
+        name :"EXPENSE_UPDATE",
+        Components : ExpenseFormUpdate,
+        path: path.UPDATE_EXPENSE,
+        isPrivate: false
+    },
+    {
+        name :"INCOME_UPDATE",
+        Components : IncomeFormUpdate,
+        path: path.UPDATE_INCOME,
         isPrivate: false
     },
 

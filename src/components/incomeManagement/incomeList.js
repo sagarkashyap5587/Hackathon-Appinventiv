@@ -12,9 +12,11 @@ const IncomeList = () => {
   };
 
 
-  const handleEdit = (id) => {
+  const handleEdit = (id, category, amount, date) => {
     localStorage.setItem("id",id)
-    localStorage.getItem("")
+    localStorage.setItem("category",category)
+    localStorage.setItem("amount",amount)
+    localStorage.setItem("date", date)
   }
 
   return (
@@ -40,7 +42,7 @@ const IncomeList = () => {
                   <td>{item.date}</td>
                   <td>
                     <button
-                      onClick={() => handleEdit(item.id)}
+                      onClick={() => handleEdit(item.id, item.category, item.amount, item.date)}
                       style={{ cursor: "pointer" }}
                     >
                       Edit

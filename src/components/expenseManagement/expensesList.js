@@ -11,6 +11,12 @@ const ExpenseList = () => {
     dispatch(deleteExpense({id}))
   }
 
+  const handleEdit = (id, category, amount, date) => {
+    localStorage.setItem("id",id)
+    localStorage.setItem("category",category)
+    localStorage.setItem("amount",amount)
+    localStorage.setItem("date", date)
+  }
   return (
 
     <>
@@ -35,7 +41,7 @@ const ExpenseList = () => {
               <td>{item.category}</td>
               <td>{item.amount}</td>
               <td>{item.date}</td>
-              <td><button onClick={()=>addExpense(item.id)} style={{cursor:"pointer"}}>Edit</button></td>
+              <td><button onClick={()=>handleEdit(item.id, item.category, item.amount, item.date)} style={{cursor:"pointer"}}>Edit</button></td>
               <td><button onClick={() => handleDelete(item.id)} style={{cursor:"pointer"}}>Delete</button></td>
             </tr>
             </>
