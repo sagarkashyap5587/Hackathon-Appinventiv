@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+}
+
+.navbar ul {
+    background-color: #6dd1b6;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    gap: 2.0rem;
+    height: 70px;
+}
+.navbar ul .nav-link {
+    text-decoration: none;
+    color: #011c14;
+    font-size: 0.9375rem;
+    text-align: left;
+    font-family: serif;
+    margin-top: 2.0rem;
+}
+
+.navbar ul .nav-link:hover {
+    color: #586f69;
+}
+
+.logo-img {
+    margin-top: -32px;
+    width: 70px;
+    margin-right: 50px;
+}
+
+.navbar-space {
+    margin-left:20.125rem;
+}
