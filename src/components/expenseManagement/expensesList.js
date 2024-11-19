@@ -7,18 +7,12 @@ const ExpenseList = () => {
   const expenses = useSelector((state) => state.expenses.data);
   const dispatch = useDispatch();
 
+  const handleDelete = (id) => {
+    dispatch(deleteExpense({id}))
+  }
+
   return (
-    // <div>
-    //   <h2>Expenses</h2>
-    //   <ul>
-    //     {expenses.map((exp) => (
-    //       <li key={exp.id}>
-    //         {exp.date} - {exp.category} - ${exp.amount}
-    //         <button onClick={() => dispatch(deleteExpense(exp.id))}>Delete</button>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
+
     <>
     
     <h1 style={{textAlign:'center', marginTop:"30px"}}>INCOME LIST</h1>
@@ -42,7 +36,7 @@ const ExpenseList = () => {
               <td>{item.amount}</td>
               <td>{item.date}</td>
               <td><button onClick={()=>addExpense(item.id)} style={{cursor:"pointer"}}>Edit</button></td>
-              <td><button onClick={() => dispatch(deleteExpense(item.id))} style={{cursor:"pointer"}}>Delete</button></td>
+              <td><button onClick={() => handleDelete(item.id)} style={{cursor:"pointer"}}>Delete</button></td>
             </tr>
             </>
           )
